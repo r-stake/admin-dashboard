@@ -155,4 +155,48 @@ main {
     grid-column: 2;
     grid-row: 2;
     background-color: lightgray;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    padding: 0 20px;
+    gap: 20px;
+}
+
+main .projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 250px);
+    gap: 30px;
+}
+
+main .projects .card {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    background-color: white;
+    padding: 0 20px 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #b9b9b9;
+    border-left: 5px solid #005aff;
+}
+
+main .projects .card > div:last-child {
+    justify-self: end;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+main .projects .card .icon1,
+main .projects .card .icon2 {
+    position: relative;
+}
+
+main .projects .card .icon1 i:last-child,
+main .projects .card .icon2 i:last-child {
+    position: absolute;
+    left: 7px;
+    top: 9px;
+    padding: 1px;
+    background-color: white;
+    font-size: 0.75rem;
 }
