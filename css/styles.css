@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+body {
+    padding: 0;
+    margin: 0;
+}
+
 .grid {
     display: grid;
 }
@@ -16,17 +21,101 @@
 header {
     grid-column: 2;
     grid-row: 1 / 2;
-    grid-template-columns: 1fr 10fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    padding: 0 40px 20px;
+    align-items: center;
+    font-weight: 800;
+    box-shadow: 0 5px 5px lightgray;
 }
 
-header img {
+header .sub-grid1 {
+    display: grid;
+    grid-template-columns: 60% 1fr;
+}
+
+header .sub-grid1 div:first-of-type {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+}
+
+header .sub-grid1 i {
+    align-self: center;
+    justify-self: center;
+}
+
+header .sub-grid1 input {
+    border-radius: 15px;
+    height: 30px;
+    border: none;
+    background-color: lightgray;
+    padding-left: 30px;
+}
+
+header .sub-grid1 input:focus {
+    outline: none;
+    background-color: #bbbaba;
+    box-shadow: 5px 5px 3px #808080;
+}
+
+header .sub-grid1 div:nth-of-type(2) {
+    display: grid;
+    grid-template-columns: 30px 50px auto;
+    grid-template-rows: 30px;
+    align-items: center;
+    justify-content: end;
+    gap: 25px;
+}
+
+header .sub-grid1 div:nth-of-type(2) i {
+    font-size: 1.5rem;
+}
+
+header .sub-grid1 div:nth-of-type(2) img {
     width: 50px;
 }
 
-header img:first-of-type {
-    width: 30px;
+
+header .sub-grid2 {
+    display: grid;
+    grid-template-columns: 1fr repeat(3, auto);
+    gap: 1.25rem;
 }
+
+header .sub-grid2 > div:first-of-type {
+   display: grid;
+   grid-template-columns: auto 1fr;
+   gap: 20px;
+}
+
+header .sub-grid2 img {
+    width: 70px;
+    align-self: center;
+    justify-self: center;
+}
+
+header .sub-grid2 .user-info p:first-child {
+    font-size: 0.75rem;
+    margin-bottom: 0.25rem;
+}
+
+header .sub-grid2 .user-info p:last-child {
+    font-size: 1.25rem;
+    margin-top: 0;
+}
+
+header button {
+    height: 40px;
+    width: 90px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    background-color: orange;
+    align-self: center;
+    font-weight: 800;
+    color: white;
+}
+
+
 
 .sidebar {
     grid-column: 1;
@@ -41,11 +130,16 @@ header img:first-of-type {
     grid-template-columns: 1fr 10fr;
 }
 
+.sidebar > div:first-of-type span {
+    font-size: 1.5rem;
+}   
+
 .sidebar ul {
     list-style-type: none;
     padding: 0;
     gap: 15px;
     margin-top: 3rem;
+    font-size: 1.125rem;
 }
 
 .sidebar ul li {
@@ -60,4 +154,5 @@ header img:first-of-type {
 main {
     grid-column: 2;
     grid-row: 2;
+    background-color: lightgray;
 }
