@@ -142,6 +142,11 @@ header button:hover {
     grid-template-columns: 1fr 10fr;
 }
 
+.sidebar nav {
+    margin-left: 0.75rem;
+}
+
+
 .sidebar > div:first-of-type span {
     font-size: 1.5rem;
 }   
